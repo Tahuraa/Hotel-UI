@@ -218,7 +218,7 @@ const StaffDashboard = ({ user, setUser }) => {
                           onClick={() => updateRoomStatus(room.id, 'cleaningStatus', 'cleaning')}
                           className="flex-1"
                         >
-                          <Cleaning className="h-3 w-3 mr-1" />
+                          <Sparkles className="h-3 w-3 mr-1" />
                           Clean
                         </Button>
                         <Button 
