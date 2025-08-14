@@ -10,7 +10,7 @@ import {
   Clock, 
   AlertTriangle, 
   LogOut,
-  Cleaning,
+  Sparkles,
   Package,
   Bell,
   Calendar
