@@ -193,3 +193,131 @@ export const loginUser = (user) => {
 export const logoutUser = () => {
   localStorage.removeItem('stayease_user');
 };
+
+// Additional helper functions for dashboard data
+export const getAllBookings = () => {
+  // Generate more mock bookings for better demo
+  const additionalBookings = [
+    {
+      id: 'b2',
+      guestId: '1',
+      guestName: 'John Doe',
+      roomId: 'r2',
+      roomNumber: '205',
+      roomType: 'Standard Room',
+      checkIn: '2025-01-22',
+      checkOut: '2025-01-24',
+      totalAmount: 318,
+      nights: 2,
+      status: 'pending',
+      guests: 1,
+      specialRequests: 'Quiet room preferred'
+    },
+    {
+      id: 'b3',
+      guestId: '3',
+      guestName: 'Michael Johnson',
+      roomId: 'r3',
+      roomNumber: '301',
+      roomType: 'Presidential Suite',
+      checkIn: '2025-01-25',
+      checkOut: '2025-01-28',
+      totalAmount: 1797,
+      nights: 3,
+      status: 'confirmed',
+      guests: 2,
+      specialRequests: 'Anniversary celebration'
+    },
+    {
+      id: 'b4',
+      guestId: '2',
+      guestName: 'Sarah Smith',
+      roomId: 'r1',
+      roomNumber: '101',
+      roomType: 'Deluxe Suite',
+      checkIn: '2025-01-18',
+      checkOut: '2025-01-20',
+      totalAmount: 598,
+      nights: 2,
+      status: 'completed',
+      guests: 1,
+      specialRequests: ''
+    }
+  ];
+
+  // Add guestName and other details to original booking
+  const enhancedOriginal = {
+    ...mockBookings[0],
+    guestName: 'John Doe',
+    roomNumber: '101',
+    roomType: 'Deluxe Suite',
+    nights: 5
+  };
+
+  return [enhancedOriginal, ...additionalBookings];
+};
+
+export const getAllUsers = () => {
+  // Add creation dates to users
+  return mockUsers.map(user => ({
+    ...user,
+    createdAt: new Date(2024, Math.floor(Math.random() * 12), Math.floor(Math.random() * 28)).toISOString()
+  }));
+};
+
+export const updateBookingStatus = (bookingId, newStatus) => {
+  // In a real app, this would update the database
+  console.log(`Updating booking ${bookingId} to status: ${newStatus}`);
+  return true;
+};
+
+export const getHousekeepingTasks = () => {
+  return [
+    {
+      id: 'ht1',
+      roomNumber: '102',
+      task: 'Deep cleaning required',
+      priority: 'high',
+      status: 'pending',
+      assignedTo: 'Sarah Smith',
+      estimatedTime: 45
+    },
+    {
+      id: 'ht2',
+      roomNumber: '205',
+      task: 'Replace towels and amenities',
+      priority: 'medium',
+      status: 'completed',
+      assignedTo: 'Sarah Smith',
+      estimatedTime: 20
+    },
+    {
+      id: 'ht3',
+      roomNumber: '301',
+      task: 'Maintenance check - AC repair',
+      priority: 'high',
+      status: 'in-progress',
+      assignedTo: 'Maintenance Team',
+      estimatedTime: 90
+    },
+    {
+      id: 'ht4',
+      roomNumber: '103',
+      task: 'Standard cleaning',
+      priority: 'low',
+      status: 'pending',
+      assignedTo: 'Sarah Smith',
+      estimatedTime: 30
+    }
+  ];
+};
+
+export const getRevenue = () => {
+  return {
+    total: 125000,
+    monthly: 32500,
+    daily: 1250,
+    yearToDate: 125000,
+    growth: 15.3
+  };
+};
