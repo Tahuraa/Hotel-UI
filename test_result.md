@@ -325,12 +325,15 @@ metadata:
 
 test_plan:
   current_focus:
-    - "Backend API Server Health Check"
-    - "CORS Configuration"
-    - "Status API Endpoints"
-    - "Database Connectivity"
-    - "Server Port Configuration"
-    - "API Error Handling"
+    - "React 18 + Vite Setup"
+    - "Home Page Landing"
+    - "Authentication Flow"
+    - "Guest Dashboard"
+    - "Staff Dashboard"
+    - "Admin Dashboard"
+    - "Booking System"
+    - "UI Components & Styling"
+    - "Navigation & Routing"
   stuck_tasks: []
   test_all: true
   test_priority: "high_first"
